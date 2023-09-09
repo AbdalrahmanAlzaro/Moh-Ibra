@@ -2,6 +2,7 @@ import React from "react";
 import { fadeIn, slideIn, staggerContainer } from "../../utils/motion";
 import css from "./Hero.module.scss";
 import { motion } from "framer-motion";
+import Image from "../../assets/18311eff-37ca-4b70-8849-17eb91b8f4ff-removebg-preview.png";
 const Hero = () => {
   return (
     <section className={`paddings ${css.wrapper}`}>
@@ -13,23 +14,37 @@ const Hero = () => {
         className={`innerWidth ${css.container}`}
       >
         <div className={css.upperElements}>
-          <motion.span className="primaryText" variants={fadeIn("right", "tween", 0.2, 1)}>
-            Hey There,
+          <motion.span
+            className="primaryText"
+            variants={fadeIn("right", "tween", 0.2, 1)}
+            dir="RTL"
+          >
+            مرحبا بكم جميعا ,
             <br />
-            I'm Binjan.
+            في قناة إبراهيم ومحمد .
           </motion.span>
-          <motion.span className="secondaryText"variants={fadeIn("left", "tween", 0.4, 1)}>
-            I design beautiful simple
+          <motion.span
+            className="secondaryText"
+            variants={fadeIn("left", "tween", 0.4, 1)}
+          >
+            نحن داعمين للمحتوى الرياضي
             <br />
-            things, And I love what i do{" "}
+            وإعطاء ردة فعل على المباريات
           </motion.span>
         </div>
 
         <motion.div
           variants={fadeIn("up", "tween", 0.3, 1)}
           className={css.person}
+          style={{
+            marginTop: "50rem",
+          }}
         >
-          <motion.img variants={slideIn("up", "tween", 0.5, 1.3)} src="./person.png" alt="" />
+          <motion.img
+            variants={slideIn("up", "tween", 0.5, 1.3)}
+            src={Image}
+            alt=""
+          />
         </motion.div>
 
         <a className={css.email} href="mailto:zainkeepscode@gmail.com">
@@ -37,18 +52,25 @@ const Hero = () => {
         </a>
 
         <div className={css.lowerElements}>
-          <motion.div variants={fadeIn("right", "tween", 0.3, 1)} className={css.experience}>
-            <div className="primaryText">10</div>
-            <div className="secondaryText">
-              <div>Years</div>
-              <div>Experience</div>
+          <motion.div
+            variants={fadeIn("right", "tween", 0.3, 1)}
+            className={css.experience}
+          >
+            {/* <div className="primaryText" dir="rtl">
+              2
+            </div> */}
+            <div className="secondaryText" dir="rtl">
+              <div>سنتان من الخبرة</div>
+              <div></div>
             </div>
           </motion.div>
 
-          <motion.div variants={fadeIn("left", "tween", 0.5, 1)} className={css.certificate}>
-            <img src="./certificate.png" alt="" />
-            <span>CERTIFIED PROFATIONAL</span>
-            <span>UI/UX DESIGNER</span>
+          <motion.div
+            variants={fadeIn("left", "tween", 0.5, 1)}
+            className={css.certificate}
+          >
+            <img src={Image} alt="" />
+            شهادات احترافية في مجال الرياضة ولتأهيل الرياضي
           </motion.div>
         </div>
       </motion.div>
